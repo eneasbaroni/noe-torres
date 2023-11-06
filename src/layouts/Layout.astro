@@ -1,0 +1,82 @@
+---
+import Footer from '../components/layout/Footer.astro'
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/png" href="/images/icon.png" />
+		<!-- font -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">		
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<header>
+			<!-- <img src="/images/logo.png" alt="logo"> -->
+			<!-- <p>O</p> -->
+		</header>
+		<slot />
+		<Footer/>
+	</body>
+</html>
+<style is:global>
+	:root {
+		--main-color: #1e1c21;
+		--main-color-50: #1e1c217a;
+		--second-color: rgba(51, 49, 49, 0.5);
+		--third-color: #dbeae5;
+		--main-bg: white;
+		--second-bg: rgba(255, 201, 201, 0.5);
+		--main-border: rgba(0, 0, 0, 0.2);
+		--main-filter: invert(7%) sepia(14%) saturate(667%) hue-rotate(222deg)
+			brightness(91%) contrast(89%);
+
+		background-color: var(--main-bg);
+	}
+	
+	@font-face {
+		font-family: ogg;
+		src: url(/fonts/Ogg-Roman.otf);
+		font-weight: 400;
+	}
+
+	* {
+		font-family: "ogg", sans-serif;		
+		font-family: 'Inter', sans-serif;
+		font-family: 'Montserrat', sans-serif;
+		font-size: 16px;
+		font-weight: 400;
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		color: var(--main-color);
+		scroll-behavior: smooth;
+		/* background-color: var(--main-bg); */
+	}
+
+	a {
+		text-decoration: inherit;
+	}
+
+	header {
+		margin: 1rem;
+		text-align: center;
+		font-size: 2rem;		
+
+		& img {
+			height: 100px;
+		}
+	}
+</style>

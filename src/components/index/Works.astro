@@ -1,0 +1,134 @@
+---
+import data from "../../data/data.js"
+
+const works = data
+---
+
+<div id="works">
+    <h2>/ MY WORK</h2>
+    <div class='worksContainers'>
+        {works.map((work) => (
+            <div class='workContainer'>
+                <img src={work.img} class='workImg'/>
+
+                <a class='workInfo' href={work.link} target="_blank" rel="noopener noreferrer">
+                    <div class="workText">
+                        <h3>{work.nombre}</h3>
+                        {work.tareas.map((tarea) => (
+                            <li>{tarea}</li>
+                        ))}
+                    </div>
+                </a>
+
+            </div>
+        ))}
+    </div>
+</div>
+
+<style>
+    #works {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 2rem auto;
+        width: 100%;
+        flex-wrap: wrap;
+
+        & .worksContainers {            
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+            width: 100%;
+            gap: 0.5rem;     
+            
+            @media screen and (max-width: 576px) {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        & h2 {
+			width: 100%;
+            font-size: 2rem;          
+            text-align: left;
+            align-self: flex-start;
+            margin: 0 auto;           
+		}
+
+        & .workContainer {
+            position: relative;
+            transition: all ease-in-out 2s;	
+            width: 100%;
+            height: 400px;
+            box-shadow: 4px 4px 6px -1px rgba(0,0,0,.3),0 2px 4px -2px rgba(0,0,0,.3);
+            overflow: hidden;
+            border-radius: 1rem;
+
+            &:hover .workInfo {
+                box-shadow: 6px 4px 10px -1px rgba(0,0,0,.3),0 2px 8px -2px rgba(0,0,0,.3);
+                background-color: rgba(51, 51, 51, 0.5);                
+            }
+
+            &:hover .workImg {
+                transform: scale(1.1);
+            }
+
+            &:hover .workInfo .workText {
+                top: 310px;
+            }
+
+            & .workImg {
+                width: 100%;
+                height: 400px;
+                z-index: 10;
+                cursor: pointer;
+                box-shadow: 4px 4px 6px -1px rgba(0,0,0,.3),0 2px 4px -2px rgba(0,0,0,.3);
+                transition: all ease-in-out 0.5s;
+                object-fit: cover;
+                border-radius: 1rem;
+            }
+    
+            & .workInfo {
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 400px;
+                background-color: rgba(51, 51, 51, 0);
+                z-index; 50;
+                transition: all ease-in-out 0.5s;	
+                cursor: pointer;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                align-items: flex-start;
+                color: white;
+                text-align: left;
+                padding: 1rem 2rem;
+
+                & .workText {
+                    position: absolute;
+                    top: 368px;
+                    transition: all 0.5s ease-in-out;
+
+                    & li {
+                        list-style:none
+                    }
+                }
+    
+                & * {
+                    color: white;
+                }
+    
+                & h3 {
+                    font-size:1.5rem;
+                    /* font-family: "ogg", sans-serif; */
+                }
+            }
+        }
+
+    }
+ 
+</style>
