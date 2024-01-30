@@ -1,6 +1,6 @@
 const data = [
     {
-        nombre : 'Dromo',
+        nombre : 'Dromo 2023',
         tareas: [
             'Social media',
             'Content creator'
@@ -9,7 +9,7 @@ const data = [
         link: 'https://www.instagram.com/dromo.oficial/'
     },
     {
-        nombre : 'Utzzia',
+        nombre : 'Utzzia 2023',
         tareas: [
             'Social media',
             'Content creator'
@@ -18,7 +18,7 @@ const data = [
         link: 'https://www.instagram.com/utzzia'
     },
     {
-        nombre : 'Tiendas Genes',
+        nombre : 'Tiendas Genes 2023',
         tareas: [
             'Social media',
             'Content creator'
@@ -27,12 +27,21 @@ const data = [
         link: 'https://www.instagram.com/tiendas.genes'
     },
     {
-        nombre : 'Martinez Rubiano',
+        nombre : 'Martinez Rubiano 2022',
         tareas: [
             'Copywriter'
         ],
         img : '/images/works/martinez.webp',
         link: 'https://martinezrubiano.com.ar/'
+    },
+    {
+        nombre : 'My profile',
+        tareas: [
+            'Social media',
+            'Content creator'
+        ],
+        img : '/images/works/noe.png',
+        link: 'https://www.instagram.com/noetorresdecristal'
     }
 ]
 

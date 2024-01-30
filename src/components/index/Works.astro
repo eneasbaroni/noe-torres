@@ -48,6 +48,17 @@ const works = data
             @media screen and (max-width: 576px) {
                 grid-template-columns: 1fr;
             }
+
+            /* last div */
+            & .workContainer:last-child {
+                /* posicionar al centro */
+                justify-self: center !important;
+                margin-left: 100%;  
+                
+                @media screen and (max-width: 576px) {
+                    margin-left: 0;
+                }
+            }
         }
 
         & h2 {
